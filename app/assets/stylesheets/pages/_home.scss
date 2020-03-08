@@ -1,1 +1,50 @@
-// Specific CSS for your home-page
+#home-container {
+  display: flex;
+  height: 100vh;
+  font-family: Karla !important;
+}
+
+#pro-container {
+  height: 100%;
+  width: 50%;
+  // background-color: yellow;
+}
+
+#project-container {
+  height: 100%;
+  width: 50%;
+  background-color: red;
+}
+
+#home-infos {
+  position: absolute;
+  top: 50vh;
+  left: calc(50vw - 350px/2);
+  width: 350px;
+  text-align: center;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}

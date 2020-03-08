@@ -1,1 +1,51 @@
-<%= link_to "Photos", photos_path %>
+<div id="home-container">
+  <div id="home-infos">
+    <h1>Paul Portier</h1>
+    <h1><%= @photospro.length %></h1>
+    <h1><%= @photosproject.length %></h1>
+  </div>
+  <div id="pro-container">
+
+
+
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <% @photospro.each_with_index do |photopro, i| %>
+            <div class="swiper-slide" style="background-image: url('<%= url_for(photopro.photo) %>');"></div>
+          <% end %>
+        </div>
+      </div>
+
+
+      <!-- Initialize Swiper -->
+      <script>
+        // var swiper = new Swiper('.swiper-container');
+          var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            speed: 800,
+            effect: 'fade',
+            // pagination: {
+            //   el: '.swiper-pagination',
+            //   clickable: false,
+            // },
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
+            }
+            // navigation: {
+            //   nextEl: '.swiper-button-next',
+            //   prevEl: '.swiper-button-prev',
+            // },
+          });
+
+
+      </script>
+
+
+
+  </div>
+  <div id="project-container">
+
+  </div>
+</div>
