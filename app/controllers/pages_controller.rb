@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    @photospro = Photo.where(child_category: "Hôtels" || "Immobilier")
-    @photosproject = Photo.where(child_category: "E-1" || "R2000" || "Micro-studio")
+    @photospro = Photo.where(parent_category_id: ParentCategory.find_by(title: "Pro").id)
+    @photosproject = Photo.where(parent_category_id: ParentCategory.find_by(title: "Projets").id)
   end
 end

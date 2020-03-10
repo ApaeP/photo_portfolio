@@ -1,51 +1,52 @@
 <div id="home-container">
   <div id="home-infos">
     <h1>Paul Portier</h1>
-    <h1><%= @photospro.length %></h1>
-    <h1><%= @photosproject.length %></h1>
   </div>
   <div id="pro-container">
 
-
-
       <!-- Swiper -->
-      <div class="swiper-container">
+            <%= link_to parent_category_path("Pro") do %>
+      <div class="pro-swiper-container">
         <div class="swiper-wrapper">
-          <% @photospro.each_with_index do |photopro, i| %>
-            <div class="swiper-slide" style="background-image: url('<%= url_for(photopro.photo) %>');"></div>
+          <% @photospro.shuffle.each_with_index do |photopro, i| %>
+              <div class="swiper-slide" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.6)), url('<%= url_for(photopro.photo) %>');"></div>
           <% end %>
         </div>
       </div>
-
-
-      <!-- Initialize Swiper -->
-      <script>
-        // var swiper = new Swiper('.swiper-container');
-          var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            speed: 800,
-            effect: 'fade',
-            // pagination: {
-            //   el: '.swiper-pagination',
-            //   clickable: false,
-            // },
-            autoplay: {
-              delay: 3000,
-              disableOnInteraction: false,
-            }
-            // navigation: {
-            //   nextEl: '.swiper-button-next',
-            //   prevEl: '.swiper-button-prev',
-            // },
-          });
-
-
-      </script>
-
-
+            <% end %>
 
   </div>
   <div id="project-container">
 
+      <!-- Swiper -->
+      <div class="project-swiper-container">
+        <div class="swiper-wrapper">
+          <% @photosproject.shuffle.each_with_index do |photoproject, i| %>
+            <div class="swiper-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.0)), url('<%= url_for(photoproject.photo) %>');"></div>
+          <% end %>
+        </div>
+      </div>
+
   </div>
 </div>
+
+<script>
+    var swiper = new Swiper('.pro-swiper-container', {
+    loop: true,
+    speed: 1800,
+    effect: 'fade',
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    }
+  });
+  var swiper = new Swiper('.project-swiper-container', {
+    loop: true,
+    speed: 1800,
+    effect: 'fade',
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    }
+  });
+</script>

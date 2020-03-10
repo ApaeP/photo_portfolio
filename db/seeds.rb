@@ -41,6 +41,7 @@ puts "\nSTART SEEDING"
 
         insect_links.each_with_index do |link, i|
           photo_insect = Photo.new(name: "Insecte#{i+1}", description: "Insecte n°#{i+1} super stylé", child_category: ChildCategory.find_by(title: "Micro-studio"))
+          photo_insect.parent_category_id = photo_insect.child_category.parent_category_id
           photo_insect.photo.attach(io: URI.open(link), filename: "Photo Insecte n°#{i+1}", content_type: "image/jpg")
           photo_insect.save!
           puts "Photo n°#{i+1} created"
@@ -52,6 +53,7 @@ puts "\nSTART SEEDING"
 
         e_1_links.each_with_index do |link, i|
           photo_e1 = Photo.new(name: "E-1 - #{i+1}", description: "E-1 n°#{i+1} de ouf", child_category: ChildCategory.find_by(title: "E-1"))
+          photo_e1.parent_category_id = photo_e1.child_category.parent_category_id
           photo_e1.photo.attach(io: URI.open(link), filename: "Photo E-1 n°#{i+1}", content_type: "image/jpg")
           photo_e1.save!
           puts "Photo n°#{i+1} created"
@@ -63,6 +65,7 @@ puts "\nSTART SEEDING"
 
         r2000_links.each_with_index do |link, i|
           photo_r2000 = Photo.new(name: "R2000 - #{i+1}", description: "R2000 n°#{i+1} waou", child_category: ChildCategory.find_by(title: "R2000"))
+          photo_r2000.parent_category_id = photo_r2000.child_category.parent_category_id
           photo_r2000.photo.attach(io: URI.open(link), filename: "Photo R2000 n°#{i+1}", content_type: "image/jpg")
           photo_r2000.save!
           puts "Photo n°#{i+1} created"
@@ -74,6 +77,7 @@ puts "\nSTART SEEDING"
 
         hotel_links.each_with_index do |link, i|
           photo_hotel = Photo.new(name: "Hotel - #{i+1}", description: "Hotel n°#{i+1} amazing", child_category: ChildCategory.find_by(title: "Hôtels"))
+          photo_hotel.parent_category_id = photo_hotel.child_category.parent_category_id
           photo_hotel.photo.attach(io: URI.open(link), filename: "Photo Hotel n°#{i+1}", content_type: "image/jpg")
           photo_hotel.save!
           puts "Photo n°#{i+1} created"
@@ -85,6 +89,7 @@ puts "\nSTART SEEDING"
 
         immo_links.each_with_index do |link, i|
           photo_immo = Photo.new(name: "Immo - #{i+1}", description: "Immo n°#{i+1} waou", child_category: ChildCategory.find_by(title: "Immobilier"))
+          photo_immo.parent_category_id = photo_immo.child_category.parent_category_id
           photo_immo.photo.attach(io: URI.open(link), filename: "Photo Immo n°#{i+1}", content_type: "image/jpg")
           photo_immo.save!
           puts "Photo n°#{i+1} created"
