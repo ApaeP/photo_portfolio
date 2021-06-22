@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.6.5'
+ruby '3.0.1'
 
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
-gem 'pg', '~> 0.21'
+gem 'pg', '~> 1.1'
 gem 'puma'
-gem 'rails', '6.0.2.1'
+gem 'rails', '6.1.3.2'
 gem 'redis'
 
 gem 'autoprefixer-rails'
@@ -17,7 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 
 gem 'activeadmin'
-gem 'cloudinary', '~> 1.12.0'
+gem 'cloudinary'#, '~> 1.12.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

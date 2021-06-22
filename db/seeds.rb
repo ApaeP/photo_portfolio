@@ -9,7 +9,7 @@ immo_links = [ "https://res.cloudinary.com/paulpphoto/image/upload/v1582547688/0
 puts "\nSTART SEEDING"
 
   puts "\nDestroying database"
-  photo_count = Photo.count
+    photo_count = Photo.count
     Photo.all.each_with_index do |photo, i|
       puts "Destroying pic n°#{i}/#{photo_count}"
       photo.destroy!
@@ -34,15 +34,12 @@ puts "\nSTART SEEDING"
   puts "Child categories created"
 
   puts "\nCreating photos"
-
     nb_de_tours = 1
     tour = 1
-
     nb_de_tours.times do
       puts "\nTour n°#{tour} sur #{nb_de_tours}\n"
 
       puts "\nInsects photos creation (#{insect_links.length})"
-
         insect_links.each_with_index do |link, i|
           photo_insect = Photo.new(name: "Insecte#{i+1}", description: "Insecte n°#{i+1} super stylé", child_category: ChildCategory.find_by(title: "Micro-studio"))
           photo_insect.parent_category_id = photo_insect.child_category.parent_category_id
@@ -50,11 +47,9 @@ puts "\nSTART SEEDING"
           photo_insect.save!
           puts "Photo n°#{i+1} created"
         end
-
       puts "Insects photos created"
 
       puts "\nE_1 photos creation (#{e_1_links.length})"
-
         e_1_links.each_with_index do |link, i|
           photo_e1 = Photo.new(name: "E-1 - #{i+1}", description: "E-1 n°#{i+1} de ouf", child_category: ChildCategory.find_by(title: "E-1"))
           photo_e1.parent_category_id = photo_e1.child_category.parent_category_id
@@ -62,11 +57,9 @@ puts "\nSTART SEEDING"
           photo_e1.save!
           puts "Photo n°#{i+1} created"
         end
-
       puts "E-1 photos created"
 
       puts "\nR2000 photos creation (#{r2000_links.length})"
-
         r2000_links.each_with_index do |link, i|
           photo_r2000 = Photo.new(name: "R2000 - #{i+1}", description: "R2000 n°#{i+1} waou", child_category: ChildCategory.find_by(title: "R2000"))
           photo_r2000.parent_category_id = photo_r2000.child_category.parent_category_id
@@ -74,11 +67,9 @@ puts "\nSTART SEEDING"
           photo_r2000.save!
           puts "Photo n°#{i+1} created"
         end
-
       puts "R2000 photos created"
 
       puts "\nHotel photos creation (#{hotel_links.length})"
-
         hotel_links.each_with_index do |link, i|
           photo_hotel = Photo.new(name: "Hotel - #{i+1}", description: "Hotel n°#{i+1} amazing", child_category: ChildCategory.find_by(title: "Hôtels"))
           photo_hotel.parent_category_id = photo_hotel.child_category.parent_category_id
@@ -86,11 +77,9 @@ puts "\nSTART SEEDING"
           photo_hotel.save!
           puts "Photo n°#{i+1} created"
         end
-
-      puts "R2000 photos created"
+      puts "Hotel photos created"
 
       puts "\nImmobilier photos creation (#{immo_links.length})"
-
         immo_links.each_with_index do |link, i|
           photo_immo = Photo.new(name: "Immo - #{i+1}", description: "Immo n°#{i+1} waou", child_category: ChildCategory.find_by(title: "Immobilier"))
           photo_immo.parent_category_id = photo_immo.child_category.parent_category_id
@@ -98,12 +87,9 @@ puts "\nSTART SEEDING"
           photo_immo.save!
           puts "Photo n°#{i+1} created"
         end
-
       puts "Immobilier photos created"
-
       tour += 1
     end
-
   puts "\nCreating photos done"
 
 puts "\nSEEDING DONE"
