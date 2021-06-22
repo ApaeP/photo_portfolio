@@ -20,6 +20,11 @@ export default class extends Controller {
     })
   }
 
+  opacify(event) {
+    console.log('lolololololol')
+    this.containerTarget.dispatchEvent(new MouseEvent('mouseover', {bubbles: true}))
+  }
+
   get config() {
     let base = {
       watchOverflow: true,
