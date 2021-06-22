@@ -14,6 +14,12 @@ class PhotosController < ApplicationController
   end
 
   def create
+    @photo = Photo.new(photo_params)
+    if @photo.save!
+      redirect_to root_path
+    else
+      flash[:alert]= 'Photo non créée'
+    end
 
   end
 
@@ -36,7 +42,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
 
-  def antique_params
-    params.require(:photo).permit(:name, :description, :photo, :category)
+  def photo_params
+    params.require(:photo).permit(:name, :description, :photo, :parent_category, :child_category)
   end
 end

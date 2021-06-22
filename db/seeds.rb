@@ -9,14 +9,18 @@ immo_links = [ "https://res.cloudinary.com/paulpphoto/image/upload/v1582547688/0
 puts "\nSTART SEEDING"
 
   puts "\nDestroying database"
-    Photo.destroy_all
+  photo_count = Photo.count
+    Photo.all.each_with_index do |photo, i|
+      puts "Destroying pic n°#{i}/#{photo_count}"
+      photo.destroy!
+    end
     ChildCategory.destroy_all
     ParentCategory.destroy_all
     User.destroy_all
   puts "Everything has been destroyed"
 
   puts "\nCreating user"
-    user = User.new(email: "paulportierphoto@gmail.com", encrypted_password: "azerty").save
+    User.create!(email: "test@test.com", password: 'azerty', password_confirmation: 'azerty') if Rails.env.development?
   puts "User created"
 
   puts "\nCreating Parent categories"
