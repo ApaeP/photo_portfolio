@@ -3,7 +3,7 @@ class ParentCategoriesController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def show
-    @child_categories = @parent.child_categories
+    @categories = @parent.child_categories
   end
 
   def index

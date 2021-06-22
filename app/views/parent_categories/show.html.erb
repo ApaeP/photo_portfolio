@@ -1,4 +1,10 @@
-<%= @parent.title %>
-<% @child_categories.each do |cat| %>
-  <%= link_to cat.title, parent_category_child_category_path(@parent, cat) %>
-<% end %>
+<div class="h-screen flex flex-col justify-center bg-white">
+  <div class="h-1/2 flex justify-around">
+    <div class="w-3/12 flex flex-col justify-center">
+      <%= image_tag "logo.svg", class: 'max-h-full object-contain',alt: "main_logo" %>
+    </div>
+    <div class="w-7/12">
+      <%= render 'shared/swipers_stack', categories: @categories %>
+    </div>
+  </div>
+</div>
