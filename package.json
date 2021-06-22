@@ -12,6 +12,8 @@
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
     "postcss": "^7",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-preset-env": "^6.7.0",
     "stimulus": "^2.0.0",
     "swiper": "^6.7.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
