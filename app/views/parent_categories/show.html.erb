@@ -1,4 +1,11 @@
-<%= @parent.title %>
-<% @child_categories.each do |cat| %>
-  <%= link_to cat.title, parent_category_child_category_path(@parent, cat) %>
-<% end %>
+<div class="h-screen p-8">
+  <div class="h-full">
+    <% @child_categories.each do |cat| %>
+        <%=
+          render 'shared/swiper_link',
+          category: cat,
+          given_path: child_category_path(cat)
+        %>
+    <% end %>
+  </div>
+</div>

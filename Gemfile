@@ -16,8 +16,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'rails_same_site_cookie'
 gem 'activeadmin'
 gem 'cloudinary', '~> 1.12.0'
+gem "hotwire-rails", "~> 0.1.3"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -31,3 +33,4 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+

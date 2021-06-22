@@ -2,8 +2,8 @@
   <div class="relative h-2/4" data-controller="swiper">
     <div class="swiper-container max-h-full" data-swiper-target="container">
       <ul class="swiper-wrapper">
-        <% category.random_pics.shuffle.each_with_index do |item| %>
-          <li class="swiper-slide">
+        <% category.photos.shuffle.each_with_index do |item| %>
+          <li class="swiper-slide w-full">
             <%= cl_image_tag item.photo.key, class: 'w-full object-cover', 'data-swiper-target' => 'images' %>
           </li>
         <% end %>

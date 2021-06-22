@@ -1,5 +1,8 @@
-<div class="h-screen p-8">
-  <div class="h-full">
+<div class="h-screen p-8 flex justify-between">
+  <div class="w-1/3 flex flex-col justify-center">
+    <%= image_tag "logo.png", alt: "alttext" %>
+  </div>
+  <div class="h-full w-2/3">
     <%=
       render 'shared/swiper_link',
       category: ParentCategory.find_by(title: "Pro"),
