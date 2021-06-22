@@ -4,7 +4,7 @@ require("channels")
 
 import 'controllers'
 
-import "tailwindcss/tailwind"
+import "tailwindcss/tailwind.css"
 
 $(document).on('turbolinks:load', function() {
 
