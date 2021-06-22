@@ -1,0 +1,4 @@
+<%= @parent.title %>
+<% @child_categories.each do |cat| %>
+  <%= link_to cat.title, parent_category_child_category_path(@parent, cat) %>
+<% end %>

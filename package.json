@@ -9,10 +9,16 @@
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
+    "stimulus": "^2.0.0",
+    "swiper": "^6.7.0",
+    "tailwind": "^4.0.0",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.2",
     "webpack-dev-server": "^3.10.3"
   }
 }
