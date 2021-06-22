@@ -8,6 +8,7 @@ ActiveAdmin.register Photo do
     def create
       params[:photo][:parent_category_id] = ChildCategory.find(params[:photo][:child_category_id]).parent_category.id
       save_resource(build_resource)
+      redirect_to admin_photos_path
     end
   end
 
