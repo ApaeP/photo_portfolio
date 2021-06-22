@@ -1,6 +1,5 @@
-<%= @child_category.title %>
-<div class="flex mx-auto">
+<div class="flex flex-wrap mx-auto">
   <% @photos.each do |photo| %>
-    <%= cl_image_tag photo.photo.key, width: 450, height: 240, crop: :fill %>
+    <%= render 'photos/card', photo: photo %>
   <% end %>
 </div>
