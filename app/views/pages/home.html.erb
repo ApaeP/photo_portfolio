@@ -1,13 +1,14 @@
-<div class="h-screen">
-  <%=
-    render 'shared/swiper_link',
-    category: ParentCategory.find_by(title: "Pro"),
-    given_path: parent_category_path(ParentCategory.find_by(title: "Pro"))
-  %>
-  <%=
-    render 'shared/swiper_link',
-    category: ParentCategory.find_by(title: "Projets"),
-    given_path: parent_category_path(ParentCategory.find_by(title: "Projets"))
-  %>
+<div class="h-screen p-8">
+  <div class="h-full">
+    <%=
+      render 'shared/swiper_link',
+      category: ParentCategory.find_by(title: "Pro"),
+      given_path: parent_category_path(ParentCategory.find_by(title: "Pro"))
+    %>
+    <%=
+      render 'shared/swiper_link',
+      category: ParentCategory.find_by(title: "Projets"),
+      given_path: parent_category_path(ParentCategory.find_by(title: "Projets"))
+    %>
+  </div>
 </div>
-
