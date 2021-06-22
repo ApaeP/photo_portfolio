@@ -1,14 +1,21 @@
-<div class="h-screen p-8">
-  <div class="h-full">
-    <%=
-      render 'shared/swiper_link',
-      category: ParentCategory.find_by(title: "Pro"),
-      given_path: parent_category_path(ParentCategory.find_by(title: "Pro"))
-    %>
-    <%=
-      render 'shared/swiper_link',
-      category: ParentCategory.find_by(title: "Projets"),
-      given_path: parent_category_path(ParentCategory.find_by(title: "Projets"))
-    %>
+<div class="h-screen flex flex-col justify-center bg-repeat" style="background-image: url(<%= asset_path('background.png') %>);">
+  <div class="h-1/2 flex justify-around">
+    <div class="w-3/12 flex flex-col justify-center">
+      <%= image_tag "logo.png", class: 'max-h-full object-contain',alt: "main_logo" %>
+    </div>
+    <div class="w-7/12">
+      <%=
+        render 'shared/swiper_link',
+        category: ParentCategory.find_by(title: "Pro"),
+        given_path: parent_category_path(ParentCategory.find_by(title: "Pro")),
+        swiper_count: 2
+      %>
+      <%=
+        render 'shared/swiper_link',
+        category: ParentCategory.find_by(title: "Projets"),
+        given_path: parent_category_path(ParentCategory.find_by(title: "Projets")),
+        swiper_count: 2
+      %>
+    </div>
   </div>
 </div>
