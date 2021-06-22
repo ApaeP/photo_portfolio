@@ -4,8 +4,7 @@ require("channels")
 
 import 'controllers'
 
-// import 'swiper/swiper-bundle.css';
-import "tailwindcss/tailwind.css"
+import "tailwindcss/tailwind"
 
 $(document).on('turbolinks:load', function() {
 
